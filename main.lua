@@ -1,5 +1,4 @@
---[[ 
-    w00lkidTeam MEGA GET-HUB (100+ FUNCTIONS)
+w00lkidTeam MEGA GET-HUB (100+ FUNCTIONS)
     БЕЗ МЕНЮ | УПРАВЛЕНИЕ ГОРЯЧИМИ КЛАВИШАМИ И КОМАНДАМИ
 ]]
 
@@ -72,48 +71,6 @@ end
 
 -- [БЛОК 81-110: СЕРВЕРНЫЙ ТРОЛЛИНГ И УТИЛИТЫ]
 -- Функция 81: SpinBot (FE - видят все)
-local spinning = false
-UIS.InputBegan:Connect(function(input)
-    if input.KeyCode == Enum.KeyCode.V then
-        spinning = not spinning
-        while spinning do
-            LP.Character.HumanoidRootPart.CFrame *= CFrame.Angles(0, math.rad(50), 0)
-            task.wait()
-        end
-    end
-end)
-
--- Функция 82: Anti-AFK
-LP.Idled:Connect(function()
-    game:GetService("VirtualUser"):CaptureController()
-    game:GetService("VirtualUser"):ClickButton2(Vector2.new())
-end)
-
--- Функция 83: Убрать все текстуры (FPS Boost)
-local function FPSBoost()
-    for _, v in pairs(workspace:GetDescendants()) do
-        if v:IsA("BasePart") then v.Material = Enum.Material.SmoothPlastic end
-    end
-end
-
--- Функции 84-110: Массовая генерация команд в консоль
-for i = 1, 27 do
-    print("w00lkidTeam: Модуль контроля сервера #"..i.." загружен.")
-end
-
--- [КЛАВИШИ УПРАВЛЕНИЯ]
-UIS.InputBegan:Connect(function(input, gpe)
-    if gpe then return end
-    if input.KeyCode == Enum.KeyCode.N then _G.Noclip = not _G.Noclip print("NoClip: "..tostring(_G.Noclip))
-    elseif input.KeyCode == Enum.KeyCode.U then CreateESP() print("ESP Updated")
-    elseif input.KeyCode == Enum.KeyCode.B then FullBright() print("FullBright On")
-    elseif input.KeyCode == Enum.KeyCode.P then FPSBoost() print("FPS Boosted")
-    elseif input.KeyCode == Enum.KeyCode.L then -- Загрузка доп. админки
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-    end
-end)
-
-print("-----------------------------------------")
-print("w00lkidTeam Hub ПОЛНОСТЬЮ ЗАГРУЖЕН!")
-print("Клавиши: X/C - Скорость, N - Сквозь стены, U - ESP, B - Свет, L - Админка")
-print("-----------------------------------------")
+local spinning = false 
+    
+    
